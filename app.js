@@ -1,14 +1,29 @@
-var btncheck = document.querySelector("#check-btn");
-var inputluckyno = document.querySelector("#luckyno");
-var birthdayinput = document.querySelector("#date");
+var btnCheck = document.querySelector("#btn-check");
+var inputLuckyno = document.querySelector("#luckyno");
+var birthdayInput = document.querySelector("#date");
+var outputBox = document.querySelector("#output");
 
-function luckybirthday(birthdayipt, luckyno)
-{
-    console.log(birthdayipt, luckyno)
+
+
+function calculateSum(birthDate){
+    birthDate = birthDate.replaceAll("-","");
+    var sum = 0;
+    for(var i=0; i<birthDate.length; i=i+1 ) {
+        sum = sum + Number(birthDate[i]);
+
+    }
+    return(sum);
 }
 
-var temp1 = birthdayinput.value;
-var temp2 = inputluckyno.value;
-btncheck.addEventListener("click", console.log(temp1 , temp2));
+ btnCheck.addEventListener('click',function checkNumberIsLucky() {
+    var sumDate = calculateSum(birthdayInput.value);
+    var luckyNo = Number(inputLuckyno.value);
+    if(sumDate%luckyNo === 0){
+        outputBox.innerText ="Your Birthday is Lucky";
+    }
+    else
+    {
+        outputBox.innerText ="Your Birthday is not Lucky";
+    }
+ });
 
-;
