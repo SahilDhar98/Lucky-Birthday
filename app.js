@@ -19,11 +19,12 @@ function calculateSum(birthDate){
     var sumDate = calculateSum(birthdayInput.value);
     var luckyNo = Number(inputLuckyno.value);
     if(sumDate%luckyNo === 0){
-        outputBox.innerText ="Your Birthday is Lucky";
+        
+        outputBox.innerText="Your Birthday is Lucky! 🎉 ";
     }
     else
-    {
-        outputBox.innerText ="Your Birthday is not Lucky";
+    {    
+        outputBox.innerText="Your Birthday is not Lucky!";
     }
  });
 
