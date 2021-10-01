@@ -18,13 +18,18 @@ function calculateSum(birthDate){
  btnCheck.addEventListener('click',function checkNumberIsLucky() {
     var sumDate = calculateSum(birthdayInput.value);
     var luckyNo = Number(inputLuckyno.value);
-    if(sumDate%luckyNo === 0){
+    if (sumDate&&luckyNo){
+        if(sumDate%luckyNo === 0){
         
-        outputBox.innerText="Your Birthday is Lucky! 🎉 ";
+            outputBox.innerText="Your Birthday is Lucky! 🎉 ";
+        }
+        else
+        {    
+            outputBox.innerText="Your Birthday is not Lucky! 🤭";
+        }
     }
-    else
-    {    
-        outputBox.innerText="Your Birthday is not Lucky!";
-    }
+    else{
+        outputBox.innerText = "Enter both the fields!";
+    }   
  });
 
